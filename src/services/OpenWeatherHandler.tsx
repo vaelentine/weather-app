@@ -52,7 +52,7 @@ class OpenWeatherHandler  {
         this.minTemp = response.data.main.temp_min;
         this.maxTemp = response.data.main.temp_max;
         this.ready = true;
-        this.setState('ready') 
+        this.setState(this.cityName) 
     }
 
     get invalidKey(): Boolean { 

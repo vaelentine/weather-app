@@ -9,7 +9,6 @@ const weatherObject = new OpenWeatherHandler();
 function App() {
   const [ weatherState, setWeatherState  ] = useState('')
   weatherObject.assignState(setWeatherState);
-  console.log('somevalue')
   return (
     <div className="App">
       <Search weatherObj={weatherObject}/>
