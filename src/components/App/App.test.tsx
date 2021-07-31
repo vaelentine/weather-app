@@ -9,10 +9,12 @@ describe('App', () => {
     expect(search_container).not.toBeNull();
   })
   it('should render a weather container', () => {
+    render(<App />);
     const weather_container = document.querySelector('#WeatherContainer')
     expect(weather_container).not.toBeNull();
   })
   it('should render a footer', () => {
+    render(<App />);
     const footer_component = document.querySelector('#Footer')
     expect(footer_component).not.toBeNull();
   })

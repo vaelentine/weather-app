@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import WeatherIcon from '../WeatherIcon/WeatherIcon';
 import OpenWeatherHandler from '../../services/OpenWeatherHandler'
 
 interface WeatherProps {
     weatherObj: OpenWeatherHandler;
+    weatherState: any
 }
 
-const WeatherView: React.FC<WeatherProps> = ({weatherObj}) => {
-    console.log("rdy", weatherObj.ready)
-    console.log({weatherObj})
+const WeatherView: React.FC<WeatherProps> = ({weatherObj, weatherState}) => {
     return (
          <div className="weatherContainer">
 

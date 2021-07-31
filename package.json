@@ -39,5 +39,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.31.0",
+    "eslint-loader": "^4.0.2",
+    "msw": "^0.33.1"
   }
 }

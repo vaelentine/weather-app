@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Search from '../Search/Search';
 import WeatherView from '../WeatherView/WeatherView';
 import OpenWeatherHandler from '../../services/OpenWeatherHandler'
 import Footer from '../Footer/Footer';
 
-function App() {
-  const weatherObject = new OpenWeatherHandler();
+const weatherObject = new OpenWeatherHandler();
 
+function App() {
+  const [ weatherState, setWeatherState  ] = useState('')
+  weatherObject.assignState(setWeatherState);
+  console.log('somevalue')
   return (
     <div className="App">
       <Search weatherObj={weatherObject}/>
-      <WeatherView weatherObj={weatherObject}/>
+      <WeatherView weatherObj={weatherObject} weatherState={weatherState}/>
       <Footer />
     </div>
   );

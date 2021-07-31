@@ -1,5 +1,6 @@
 import axios from 'axios';
 import getDateFromEpoch from './TimeConversion';
+import React, { useState } from 'react';
 
 require('dotenv').config()
 
@@ -19,7 +20,7 @@ class OpenWeatherHandler  {
     minTemp: string;
     maxTemp: string;
     error: boolean;
-
+    setState: any;
 
     constructor() {
         this.error = false;
@@ -51,7 +52,7 @@ class OpenWeatherHandler  {
         this.minTemp = response.data.main.temp_min;
         this.maxTemp = response.data.main.temp_max;
         this.ready = true;
-
+        this.setState('ready') 
     }
 
     get invalidKey(): Boolean { 
@@ -66,7 +67,9 @@ class OpenWeatherHandler  {
         return this.responseCode !== 200
     }
 
-
+    assignState(state: any) {
+        this.setState = state
+    }
 }
 
 export default OpenWeatherHandler
