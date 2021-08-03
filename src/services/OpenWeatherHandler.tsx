@@ -50,7 +50,7 @@ class OpenWeatherHandler  {
         }
         catch(error) {
         this.ready = false;
-        this.responseCode = error.response.data.cod.toString(); //bug with 401 in upstream api
+        this.responseCode = error.response.data.cod.toString(); //stringify response due to bug with 401 in upstream api
         this.errorMessage = this.lookupError()
         }
         const d = (Date.now());
@@ -58,7 +58,7 @@ class OpenWeatherHandler  {
     }
     
     lookupError() {
-        switch (this.responseCode) //found bug in upstream api with 401
+        switch (this.responseCode) 
         {
             case "404":
                 return 'City not found. Enter a valid city name.';
