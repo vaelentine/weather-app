@@ -6,6 +6,7 @@
 }
 
 body {
+  margin: 0;
   background: var(--bg-image);
   box-shadow: inset 2000px 0 0 0 var(--bg-color);
   font-family: 28px Verdana, Geneva, Tahoma, sans-serif;

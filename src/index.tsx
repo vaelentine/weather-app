@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import * as dotenv from 'dotenv'
 
 dotenv.config()
-console.log(process.env.REACT_APP_WEATHER_API_KEY === undefined)
+
 
 ReactDOM.render(
   <React.StrictMode>
