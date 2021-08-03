@@ -1,5 +1,5 @@
 import React from "react";
-
+import './WeatherIcon.css'
 
 
 interface WeatherIconProps {
@@ -12,8 +12,8 @@ const weatherIconURL: string = `https://openweathermap.org/img/wn/`
 const WeatherIcon: React.FC<WeatherIconProps> = ({iconCode, mainDescription}) => {
 
     return (
-        <div>
-            <img src={`${weatherIconURL}(iconCode).png`} alt={mainDescription}></img>
+        <div className='weatherIcon'>
+            <img src={`${weatherIconURL}${(iconCode)}.png`} alt={mainDescription} className='iconImage'></img>
         </div>
     );
     
