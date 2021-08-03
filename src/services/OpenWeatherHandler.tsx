@@ -19,12 +19,10 @@ class OpenWeatherHandler  {
     currentTemp: string;
     minTemp: string;
     maxTemp: string;
-    error: boolean;
     setState: any;
     errorMessage: string;
 
     constructor() {
-        this.error = false;
         this.errorMessage = '';
         this.iconCode = '';
         this.mainDescription = '';
@@ -52,30 +50,26 @@ class OpenWeatherHandler  {
         }
         catch(error) {
         this.ready = false;
-        this.error = true;
-        this.responseCode = error.response.data.cod;
-        this.lookupError()
-        console.log(error?.response?.data);
+        this.responseCode = error.response.data.cod.toString(); //bug with 401 in upstream api
+        this.errorMessage = this.lookupError()
         }
         const d = (Date.now());
         this.setState(d)    
     }
     
     lookupError() {
-        switch (this.responseCode.toString()) //found bug in upstream api with 401
+        switch (this.responseCode) //found bug in upstream api with 401
         {
             case "404":
-                this.errorMessage = 'City not found. Enter a valid city name.';
-                break;
+                return 'City not found. Enter a valid city name.';
             case "400":
-                this.errorMessage = 'No value entered. Enter a city name.'
-                break;
+                return 'No value entered. Enter a city name.';
             case "401":
-                this.errorMessage = 'Invalid API key'
-                break;
+                return 'Invalid API key';
             case "500":
-                this.errorMessage = 'Network error.'
+                return 'Network error.';
         }
+        return `Http response ${this.responseCode}: unknown error`
     }
 
     setResponseValues(response: any) {
