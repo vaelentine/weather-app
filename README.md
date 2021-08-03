@@ -17,9 +17,9 @@ Allows a user to fetch up-to-date weather data for their location from the OpenW
 ## 4. Install app and dependencies.
 - ### run `npm install`
 
-# 5. To run test suites, run 
+## 5. To run test suites, run 
 - ### `npm test`
 
-# 6. Run the app 
+## 6. Run the app 
 - ### `npm start`. 
 - This will compile the app and start up a browser session at localhost:3000.
