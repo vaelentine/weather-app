@@ -62,7 +62,8 @@ class OpenWeatherHandler  {
     }
     
     lookupError() {
-        switch (this.responseCode) {
+        switch (this.responseCode.toString()) //found bug in upstream api with 401
+        {
             case "404":
                 this.errorMessage = 'City not found. Enter a valid city name.';
                 break;
