@@ -9,7 +9,7 @@ class OpenWeatherHandler  {
     weatherURI: string;
     apiKey: string | undefined;
     keyParam: string;
-    responseCode: number;
+    responseCode: string;
     ready: boolean;
     cityName: string;
     timeStamp: string;
@@ -21,9 +21,11 @@ class OpenWeatherHandler  {
     maxTemp: string;
     error: boolean;
     setState: any;
+    errorMessage: string;
 
     constructor() {
         this.error = false;
+        this.errorMessage = '';
         this.iconCode = '';
         this.mainDescription = '';
         this.description = '';
@@ -32,7 +34,7 @@ class OpenWeatherHandler  {
         this.maxTemp = '';
         this.timeStamp = '';
         this.cityName = '';
-        this.responseCode = 0;
+        this.responseCode = '';
         this.ready = false;
         this.server = 'openweathermap.org/';
         this.weatherURI = 'data/2.5/weather';
@@ -41,8 +43,39 @@ class OpenWeatherHandler  {
     }
 
     async getWeather(city: string) {
+        try {
+        this.errorMessage = '';
         const response = await axios(`https://api.${this.server}${this.weatherURI}?${this.keyParam}&q=${city}&units=imperial`);
+
         this.responseCode = response.data.cod;
+        this.setResponseValues(response)
+        }
+        catch(error) {
+        this.ready = false;
+        this.error = true;
+        this.responseCode = error.response.data.cod;
+        this.lookupError()
+        console.log(error?.response?.data);
+        }
+        const d = (Date.now());
+        this.setState(d)    
+    }
+    
+    lookupError() {
+        switch (this.responseCode) {
+            case "404":
+                this.errorMessage = 'City not found. Enter a valid city name.';
+                break;
+            case "400":
+                this.errorMessage = 'No value entered. Enter a city name.'
+                break;
+            case "401":
+                this.errorMessage = 'Invalid API key'
+                break;
+        }
+    }
+
+    setResponseValues(response: any) {
         this.cityName = response.data.name;
         this.timeStamp = getDateFromEpoch(response.data.dt);
         this.iconCode = response.data.weather[0].icon;
@@ -52,20 +85,8 @@ class OpenWeatherHandler  {
         this.minTemp = response.data.main.temp_min;
         this.maxTemp = response.data.main.temp_max;
         this.ready = true;
-        this.setState(this.cityName) 
     }
 
-    get invalidKey(): Boolean { 
-        return this.responseCode === 401
-    }
-
-    get notFound(): Boolean {
-        return this.responseCode === 404
-    }
-
-    get errorState(): Boolean {
-        return this.responseCode !== 200
-    }
 
     assignState(state: any) {
         this.setState = state

@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import * as dotenv from 'dotenv'
 
 dotenv.config()
-console.log(process.env.REACT_APP_WEATHER_API_KEY)
+console.log(process.env.REACT_APP_WEATHER_API_KEY === undefined)
 
 ReactDOM.render(
   <React.StrictMode>
