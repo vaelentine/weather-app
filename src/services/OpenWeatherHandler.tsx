@@ -73,6 +73,8 @@ class OpenWeatherHandler  {
             case "401":
                 this.errorMessage = 'Invalid API key'
                 break;
+            case "500":
+                this.errorMessage = 'Network error.'
         }
     }
 
