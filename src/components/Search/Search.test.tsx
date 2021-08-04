@@ -3,6 +3,9 @@ import { render, screen } from '@testing-library/react';
 import Search from './Search';
 import OpenWeatherHandler from '../../services/OpenWeatherHandler'
 
+// write tests to mock user input and also mock the API call
+// add an event listener/mock so that you can check that it's fired properly
+
 
 describe('SearchForm', () => {
   const weatherObject = new OpenWeatherHandler();

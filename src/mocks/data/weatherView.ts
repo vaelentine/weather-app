@@ -1,0 +1,18 @@
+export const mockWeatherObj ={apiKey: "47169eb075e9eb2a318ebd95d075c659",
+cityName: "Berkeley",
+currentTemp: 74.59,
+description: "few clouds",
+errorMessage: "",
+iconCode: "02d",
+keyParam: "appid=47169eb075e9eb2a318ebd95d075c659",
+mainDescription: "Clouds",
+maxTemp: 99.77,
+minTemp: 57.88,
+ready: true,
+responseCode: 200,
+server: "openweathermap.org/",
+setState: ()=>{},
+timeStamp: "Tue Aug 03 2021 15:09:59 GMT-0700 (Pacific Daylight Time)",
+weatherURI: "data/2.5/weather",
+}
+export default mockWeatherObj

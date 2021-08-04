@@ -5,10 +5,12 @@ import './WeatherView.css'
 
 interface WeatherProps {
     weatherObj: OpenWeatherHandler;
-    weatherState: any
 }
 
-const WeatherView: React.FC<WeatherProps> = ({weatherObj, weatherState}) => {
+// I think that you should just call this one Weather as the 
+// WeatherHandler wont have that name clash anymore.
+
+const WeatherView: React.FC<WeatherProps> = ({weatherObj}) => {
     return (
          <div className="weatherContainer">
 

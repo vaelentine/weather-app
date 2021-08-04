@@ -1,8 +1,14 @@
+import React from 'react';
 import axios from 'axios';
 import getDateFromEpoch from './TimeConversion';
-import React, { useState } from 'react';
 
 require('dotenv').config()
+
+// This probably shouldn't be a class component
+// split it up into an api call and all the parsing 
+// that it does can be done in state by the components that use it.
+// its kinda an advanced move but i can show you how to make this into a 
+// hook if you prefer
 
 class OpenWeatherHandler  {
     server: string;
