@@ -11,13 +11,13 @@ describe('App', () => {
     const component = render(<App />);
     expect(component.asFragment()).toMatchSnapshot();
   });
-  // rm
+  // move to Search tests
   it('should render a search container', () => {
     const component = render(<App />);
     const searchContainer = component.queryByPlaceholderText('Enter City')
     expect(searchContainer).toBeInTheDocument()
   })
-  // rm
+  // move to Footer Tests
   it('should render a footer', () => {
     render(<App />);
     const footer_component = document.querySelector('.Footer')
