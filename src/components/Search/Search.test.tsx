@@ -13,8 +13,6 @@ import OpenWeatherHandler from '../../services/OpenWeatherHandler'
 //   getWeather: jest.fn(() => Promise.resolve(mockWeatherData)),
 // }));
 
-
-
 describe('SearchForm', () => {
   const weatherObject = new OpenWeatherHandler();
   it('should render a search bar', () => {
