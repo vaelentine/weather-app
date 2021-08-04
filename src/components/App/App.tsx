@@ -8,14 +8,16 @@ import './App.css';
 // i think that it would be better to make the App only contain the 
 // functional components of the app. 
 // Eventually something like the following.
-    // return (
-    //   <Main>
-    //     <Header />
-    //     <Search weatherObj={weatherObject} weatherState={weatherState}/>
-    //     <WeatherView weatherObj={weatherObject}/>
-    //     <Footer />
-    //   </Main>
-    // )
+//     return (
+//       <Main>
+//         <Header />
+//           <Weather> // This component can be the state that the weather data lives in
+//             <Search /> // can take a setState function as props so it can pass weather data from the API to the Parent Component
+//             <Display /> // can take weather data as props and render it
+//           <Weather />
+//         <Footer />
+//       </Main>
+//     )
 
 const weatherObject = new OpenWeatherHandler();
 const missingApiKey: boolean = weatherObject.apiKey ===  undefined;

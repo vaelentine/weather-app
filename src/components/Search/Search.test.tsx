@@ -2,9 +2,17 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Search from './Search';
 import OpenWeatherHandler from '../../services/OpenWeatherHandler'
+// import { mocked } from 'ts-jest/utils';
+
 
 // write tests to mock user input and also mock the API call
 // add an event listener/mock so that you can check that it's fired properly
+
+// mock weather API
+// jest.mock('api/weather', () => ({
+//   getWeather: jest.fn(() => Promise.resolve(mockWeatherData)),
+// }));
+
 
 
 describe('SearchForm', () => {

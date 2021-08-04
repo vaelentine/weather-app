@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import getDateFromEpoch from './TimeConversion';
 
-require('dotenv').config()
+// require('dotenv').config()
 
 // This probably shouldn't be a class component
 // split it up into an api call and all the parsing 
