@@ -15,4 +15,3 @@ setState: ()=>{},
 timeStamp: "Tue Aug 03 2021 15:09:59 GMT-0700 (Pacific Daylight Time)",
 weatherURI: "data/2.5/weather",
 }
-export default mockWeatherObj

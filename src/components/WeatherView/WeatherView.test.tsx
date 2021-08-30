@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import WeatherView from './WeatherView'
-import mockWeatherObj from '../../mocks/data/weatherView'
+import mockWeatherObj from '../../mocks/data/weather'
 
 // check that it renders with mock data
 // check that is displays what you want it to display before API call
