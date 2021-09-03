@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="appContainer"
+  >
+    <div
+      class="App"
+    >
+      <div
+        class="Header"
+      >
+        What's the weather in ...
+      </div>
+      <div
+        class="Search"
+      >
+        <input
+          placeholder="Enter city"
+          type="text"
+          value=""
+        />
+        <button
+          class="SearchButton"
+        >
+          Find out!
+        </button>
+      </div>
+      <div
+        class="weatherContainer"
+      />
+      <div
+        class="footerContainer"
+      >
+        <footer
+          class="Footer"
+        >
+          <span>
+            <a
+              href="https://www.linkedin.com/in/magdalene-geise-17555b7/"
+            >
+              Maggie Geise
+            </a>
+            , 2021.
+            <a
+              href="https://github.com/vaelentine/weather-app"
+            >
+               Code on Github
+            </a>
+          </span>
+        </footer>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
