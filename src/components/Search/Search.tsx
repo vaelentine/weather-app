@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Search.css'
 import getWeather from 'api/getWeather'
 
-const Search = () => {
+const Search = ({ response }:any) => {
   const [city, setCity] = useState('')
   return (
     <div className="Search">
@@ -15,7 +15,7 @@ const Search = () => {
       </input>
       <button
         className="SearchButton"
-        onClick={ () => getWeather(city)}
+        onClick={ () => response(getWeather(city))}
       >
         Find out!
       </button>
