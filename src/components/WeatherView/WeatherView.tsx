@@ -1,55 +1,59 @@
-import React from "react";
-import WeatherIcon from '../WeatherIcon/WeatherIcon';
-import OpenWeatherHandler from '../../services/OpenWeatherHandler'
+import React from 'react'
+import WeatherIcon from '../WeatherIcon/WeatherIcon'
 import './WeatherView.css'
 
 interface WeatherProps {
-    weatherObj: OpenWeatherHandler;
-    weatherState: any
+weatherData: any
 }
 
-const WeatherView: React.FC<WeatherProps> = ({weatherObj, weatherState}) => {
-    return (
+const WeatherView: React.FC<WeatherProps> = ({ weatherData }) => {
+
+    const handleChange = (event:any) => {
+        weatherData.onChange(event.target.value)
+    }
+    // const iconProps = {
+    //     iconCode={weatherData.weather[0].icon},
+    //     mainDescription={weatherData.weather[0].main}
+    // }
+    console.log(weatherData)
+  return (
          <div className="weatherContainer">
 
-
-
-            {weatherObj.ready &&<div className="weatherDisplay">
+            <div className="weatherDisplay">
                 <div className="weatherHeader">
-                    <div className="cityName">
-                        {weatherObj.cityName}
+                    <div className="cityName" onChange={handleChange}>
+                        {weatherData.name}
                     </div>
                     <div className="timeStamp">
-                        {weatherObj.timeStamp}
+                        {weatherData.dt}
                     </div>
                 </div>
                         <div className="currentTemp">
-                            {weatherObj.currentTemp}°F
+                            {weatherData.main.temp}°F
                         </div>
                         <div className="minMaxTemps">
                             <div>
-                                Low: {weatherObj.minTemp}°F
+                                Low: {weatherData.temp_min}°F
                             </div>
                             <div>
-                                High: {weatherObj.maxTemp}°F
+                                High: {weatherData.temp_max}°F
                             </div>
                     </div>
                 <div className="icon">
-                    <WeatherIcon iconCode={weatherObj.iconCode} mainDescription={weatherObj.mainDescription} />
+                    {/* <WeatherIcon iconProps={iconProps} /> */}
                 </div>
 
                 <div className="weatherInfo">
- 
 
                     <div className='weatherDescription'>
-                        {weatherObj.description}
+                        {weatherData.weather[0].description}
                     </div>
 
                 </div>
-            </div>}
+            </div>
 
          </div>
-     ) 
+  )
 }
 
 export default WeatherView
