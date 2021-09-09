@@ -9,11 +9,6 @@ import mockWeather from '__mocks__/mockWeather'
 
 jest.mock('axios')
 
-// jest.mock('api/getWeather', () => {
-//   getWeather: Promise.resolve(mockWeather)
-// })
-// Note that it might be good to implement a loading state for the weather com
-
 describe('Search Component', () => {
   it('renders correctly', () => {
     const component = render(<Search />)
@@ -36,7 +31,7 @@ describe('Search Component', () => {
     const searchButton = component.getByText('Find out!')
     fireEvent.click(searchButton)
     // get mock api call
-    expect(axios.get).toHaveBeenCalledTimes(1) // this could possibly fail due to lack of awaiting function return
+    expect(axios.get).toHaveBeenCalledTimes(1)
   })
 
   it.skip('displays error correctly', () => {
@@ -55,3 +50,4 @@ describe('Search Component', () => {
     expect(component.getByText('API Error')).toBeInTheDocument()
   })
 })
+ 
