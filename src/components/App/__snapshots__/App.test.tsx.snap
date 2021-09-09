@@ -28,9 +28,6 @@ exports[`App should render without crashing 1`] = `
         </button>
       </div>
       <div
-        class="weatherContainer"
-      />
-      <div
         class="footerContainer"
       >
         <footer
