@@ -1,5 +1,6 @@
 import React from 'react'
 import WeatherIcon from '../WeatherIcon/WeatherIcon'
+import getDateFromEpoch from 'services/TimeConversion'
 import './WeatherView.css'
 
 interface WeatherProps {
@@ -7,15 +8,10 @@ weatherData: any
 }
 
 const WeatherView: React.FC<WeatherProps> = ({ weatherData }) => {
-
     const handleChange = (event:any) => {
         weatherData.onChange(event.target.value)
     }
-    // const iconProps = {
-    //     iconCode={weatherData.weather[0].icon},
-    //     mainDescription={weatherData.weather[0].main}
-    // }
-    console.log(weatherData)
+    const timeStamp: string = getDateFromEpoch(weatherData.dt) 
   return (
          <div className="weatherContainer">
 
@@ -25,7 +21,7 @@ const WeatherView: React.FC<WeatherProps> = ({ weatherData }) => {
                         {weatherData.name}
                     </div>
                     <div className="timeStamp">
-                        {weatherData.dt}
+                        {timeStamp}
                     </div>
                 </div>
                         <div className="currentTemp">
@@ -40,7 +36,7 @@ const WeatherView: React.FC<WeatherProps> = ({ weatherData }) => {
                             </div>
                     </div>
                 <div className="icon">
-                    {/* <WeatherIcon iconProps={iconProps} /> */}
+                    <WeatherIcon iconProps={weatherData.weather[0]} />
                 </div>
 
                 <div className="weatherInfo">

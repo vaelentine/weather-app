@@ -19,7 +19,7 @@ exports[`WeatherView renders correctly 1`] = `
         <div
           class="timeStamp"
         >
-          1630560308
+          Wed Sep 01 2021 22:25:08 GMT-0700 (Pacific Daylight Time)
         </div>
       </div>
       <div
@@ -46,7 +46,7 @@ exports[`WeatherView renders correctly 1`] = `
           <img
             alt="Clear"
             class="iconImage"
-            src="https://openweathermap.org/img/wn/01n.png"
+            src="https://openweathermap.org/img/wn/01n@2x.png"
           />
         </div>
       </div>
