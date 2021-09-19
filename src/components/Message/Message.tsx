@@ -6,7 +6,7 @@ interface MessageProps {
 
 const Message: React.FC<MessageProps> = ({ messageData }) => {
   return (
-    <div className="message">
+    <div className="errorMessage">
         API Error: {messageData.message}
     </div>
   )
