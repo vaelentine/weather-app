@@ -3,7 +3,7 @@
 exports[`Search Component renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="message"
+    class="errorMessage"
   >
     API Error: city not found
   </div>
