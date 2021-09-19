@@ -1,9 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Search.css'
 import getWeather from 'api/getWeather'
+import * as dotenv from "dotenv";
+dotenv.config({ path: __dirname+'/.env' });
 
-const Search = ({ response }:any) => {
+
+const Search = (props:any) => {
+  async function handleClick() {
+    const result = await getWeather(city);
+    props.setWeatherData(result.data)
+  }
   const [city, setCity] = useState('')
+
   return (
     <div className="Search">
       <input
@@ -15,12 +23,14 @@ const Search = ({ response }:any) => {
       </input>
       <button
         className="SearchButton"
-        onClick={ () => response(getWeather(city))}
+        onClick={handleClick}
+       
       >
         Find out!
       </button>
     </div>
   )
+ 
 }
 
 export default Search
