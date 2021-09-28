@@ -3,9 +3,9 @@ Allows a user to fetch up-to-date weather data for their location from the OpenW
 <br>
 
 ### ⚠️  Note that if you skip step 3
-- :smirk: you will see a warning banner on loading the app ❗
-- :smirk: and the app snapshot test will fail 💣 
-- ✍️ (For testing purposes, feel free to use my api key REACT_APP_WEATHER_API_KEY=9b1d1757d00d6749255000675acc1e01)
+- you will see a warning banner on loading the app ❗
+- and the app snapshot test will fail 💣 
+- (For testing purposes, feel free to use my api key REACT_APP_WEATHER_API_KEY=9b1d1757d00d6749255000675acc1e01)
 
 
 ## To set up this app:
