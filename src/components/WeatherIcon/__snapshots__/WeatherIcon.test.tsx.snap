@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherIcon renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="weatherIcon"
+  >
+    <img
+      class="iconImage"
+      src="https://openweathermap.org/img/wn/undefined@2x.png"
+    />
+  </div>
+</DocumentFragment>
+`;

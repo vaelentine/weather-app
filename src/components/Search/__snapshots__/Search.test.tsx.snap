@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Component renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="Search"
+  >
+    <input
+      placeholder="Enter city"
+      type="text"
+      value=""
+    />
+    <button
+      class="SearchButton"
+    >
+      Find out!
+    </button>
+  </div>
+</DocumentFragment>
+`;

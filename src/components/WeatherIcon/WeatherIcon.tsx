@@ -1,22 +1,17 @@
-import React from "react";
+import React from 'react'
 import './WeatherIcon.css'
 
-
-interface WeatherIconProps {
-    iconCode: string;
-    mainDescription: string;
+interface iconProps {
+  iconProps:any
 }
-
-const weatherIconURL: string = `https://openweathermap.org/img/wn/`
-
-const WeatherIcon: React.FC<WeatherIconProps> = ({iconCode, mainDescription}) => {
-
-    return (
-        <div className='weatherIcon'>
-            <img src={`${weatherIconURL}${(iconCode)}.png`} alt={mainDescription} className='iconImage'></img>
-        </div>
-    );
-    
+const WeatherIcon:React.FC<iconProps> = ({ iconProps }) => {
+  const weatherIconURL = "https://openweathermap.org/img/wn/";
+  const srcUrl = `${weatherIconURL}${iconProps.icon}@2x.png`
+  return (
+    <div className="weatherIcon">
+      <img className="iconImage" src={srcUrl} alt={iconProps.main}/>
+    </div>
+  )
 }
 
 export default WeatherIcon

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherView renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="weatherContainer"
+  >
+    <div
+      class="weatherDisplay"
+    >
+      <div
+        class="weatherHeader"
+      >
+        <div
+          class="cityName"
+        >
+          Portland
+        </div>
+        <div
+          class="timeStamp"
+        >
+          Wed Sep 01 2021 22:25:08 GMT-0700 (Pacific Daylight Time)
+        </div>
+      </div>
+      <div
+        class="currentTemp"
+      >
+        291.01°F
+      </div>
+      <div
+        class="minMaxTemps"
+      >
+        <div>
+          Low: °F
+        </div>
+        <div>
+          High: °F
+        </div>
+      </div>
+      <div
+        class="icon"
+      >
+        <div
+          class="weatherIcon"
+        >
+          <img
+            alt="Clear"
+            class="iconImage"
+            src="https://openweathermap.org/img/wn/01n@2x.png"
+          />
+        </div>
+      </div>
+      <div
+        class="weatherInfo"
+      >
+        <div
+          class="weatherDescription"
+        >
+          clear sky
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

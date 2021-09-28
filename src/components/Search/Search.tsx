@@ -1,27 +1,36 @@
-import React, { useState } from 'react';
-import OpenWeatherHandler from '../../services/OpenWeatherHandler'
+import React, { useState } from 'react'
 import './Search.css'
+import getWeather from 'api/getWeather'
+import * as dotenv from "dotenv";
+dotenv.config({ path: __dirname+'/.env' });
 
-interface WeatherProps {
-    weatherObj: OpenWeatherHandler;
-    weatherState: any;
+
+const Search = (props:any) => {
+  async function handleClick() {
+    const result = await getWeather(city);
+    props.setWeatherData(result.data)
+  }
+  const [city, setCity] = useState('')
+
+  return (
+    <div className="Search">
+      <input
+      placeholder="Enter city"
+      value={city}
+      onChange={(event) => setCity(event.target.value)}
+      type="text"
+      >
+      </input>
+      <button
+        className="SearchButton"
+        onClick={handleClick}
+       
+      >
+        Find out!
+      </button>
+    </div>
+  )
+ 
 }
 
-const Search: React.FC<WeatherProps> = ({weatherObj, weatherState}) => {
-    const [city, setCity] = useState('');
-    return (
-        <div className="SearchContainer">
-            <input
-                value={city}
-                onChange={(event) => setCity(event.target.value)}
-                type="text"
-                placeholder="Enter City">
-            </input>
-            <button onClick={() => weatherObj.getWeather(city)} className="SearchButton">Find out!
-            </button>
-            {<div className="errorMessage">{weatherObj.errorMessage}</div>}
-        </div>
-    );
-};
-
-  export default Search;
+export default Search
