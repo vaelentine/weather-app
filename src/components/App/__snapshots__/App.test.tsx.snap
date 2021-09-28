@@ -6,6 +6,17 @@ exports[`App should render without crashing 1`] = `
     class="appContainer"
   >
     <div
+      class="missingKey"
+    >
+       
+      <p>
+        Warning: It looks like your API key isn't configured. 
+      </p>
+      <p>
+        Review the readme file for instructions to set one up.
+      </p>
+    </div>
+    <div
       class="App"
     >
       <div

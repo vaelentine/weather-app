@@ -33,21 +33,5 @@ describe('Search Component', () => {
     // get mock api call
     expect(axios.get).toHaveBeenCalledTimes(1)
   })
-
-  it.skip('displays error correctly', () => {
-    // mock a return value for an error state
-    mockGetWeather.mockReturnValueOnce({ message: 'API Error' })
-    const component = render(<Search />)
-    const searchInput = component.getByPlaceholderText('Enter city')
-    fireEvent.input(searchInput, { target: { value: 'NotARealCityName' } })
-    const filledInput = component.getByText('NotARealCityName')
-    expect(filledInput).toBeInTheDocument()
-
-    const searchButton = component.getByText('Find out!')
-    fireEvent.click(searchButton)
-    // get mock api call
-    expect(mockGetWeather).toBeCalledTimes(1)
-    expect(component.getByText('API Error')).toBeInTheDocument()
-  })
 })
  
