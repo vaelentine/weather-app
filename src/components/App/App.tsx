@@ -10,14 +10,11 @@ function App() {
   const [weatherResponse, setWeatherResponse]:any = useState(null) //add geoloc
 
   function handleChange(newValue:any) {
-    console.log('newValue')
-    console.log(newValue)
     setWeatherResponse(newValue)
   }
-  const missingApiKey: boolean = process.env.REACT_APP_WEATHER_API_KEY === null
+  const missingApiKey: boolean = process.env.REACT_APP_WEATHER_API_KEY === undefined
   return (
     <div className="appContainer">
-      {console.log(process.env.REACT_APP_WEATHER_API_KEY)}
       { missingApiKey && <div className="missingKey"> <p>Warning: It looks like your API key isn't configured. </p>
       <p>Review the readme file for instructions to set one up.</p></div>}
       <div className="App">
