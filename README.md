@@ -3,6 +3,8 @@ Allows a user to fetch up-to-date weather data for their location from the OpenW
 <br>
 
 ### ⚠️  Note that if you skip step 3, you will see a warning banner on loading the app :smirk:
+(For testing purposes, feel free to use my api key REACT_APP_WEATHER_API_KEY=9b1d1757d00d6749255000675acc1e01)
+
 
 ## To set up this app:
 1. Clone this repo: 
