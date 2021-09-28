@@ -1,5 +1,5 @@
 :root {
-  --bg-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701710135-768x432.jpg');
+  --bg-image: url("/src/assets/background.jpg");
   --bg-color: rgba(0, 0, 0, 0.8);
   --text-color: #FCFBF9;
   --error-color: #EE2919;
@@ -8,10 +8,9 @@
 body {
   margin: 0;
   background: var(--bg-image);
-  box-shadow: inset 2000px 0 0 0 var(--bg-color);
+  /* box-shadow: inset 2000px 0 0 0 var(--bg-color); */
   font-family: 28px Verdana, Geneva, Tahoma, sans-serif;
   color: var(--text-color);
-
   background-size: 100% 100%;
   animation: Gradient 3s linear infinite alternate;
   -webkit-animation: Gradient 15s linear infinite alternate;
@@ -34,9 +33,10 @@ body {
 }
 
 .missingKey {
-padding: 0px;
+padding: 10px;
 text-align: center;
 background: #c21010;
 color: white;
-font-size: 30px;
+font-size: 24px;
+font-family: Arial, Helvetica, sans-serif;
 }
