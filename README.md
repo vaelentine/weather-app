@@ -2,6 +2,8 @@
 Allows a user to fetch up-to-date weather data for their location from the OpenWeather API   
 <br>
 
+### ⚠️  Note that if you skip step 3, you will see a warning banner on loading the app :smirk:
+
 ## To set up this app:
 1. Clone this repo: 
 - `git clone https://github.com/vaelentine/weather-app.git`
@@ -9,6 +11,7 @@ Allows a user to fetch up-to-date weather data for their location from the OpenW
 2. Go to https://home.openweathermap.org/users/sign_up, 
 - register and obtain a free API key
 - copy your api key from https://home.openweathermap.org/api_keys
+
 
 3. At the root folder of your cloned repo, create a `.env` file and add the following key and value pair:
 - `REACT_APP_WEATHER_API_KEY=<your api key>`
