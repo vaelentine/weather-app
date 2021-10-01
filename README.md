@@ -1,11 +1,7 @@
 # weather-app
 Allows a user to fetch up-to-date weather data for their location from the OpenWeather API   
 <br>
-
-### ⚠️  Note that if you skip step 3
-- you will see a warning banner on loading the app ❗
-- and the app snapshot test will fail 💣 
-- (For testing purposes, feel free to use my api key REACT_APP_WEATHER_API_KEY=9b1d1757d00d6749255000675acc1e01)
+![image](https://user-images.githubusercontent.com/26351860/135671606-8897b4df-710c-4c88-bd9a-d88363bca0db.png)
 
 
 ## To set up this app:
@@ -22,6 +18,11 @@ Allows a user to fetch up-to-date weather data for their location from the OpenW
 
 4. Install app and dependencies.
 - run `npm install`
+
+### ⚠️  Note that if you skip step 3
+- you will see a warning banner on loading the app ❗
+- and the app snapshot test will fail 💣 
+- (For testing purposes, feel free to use my api key REACT_APP_WEATHER_API_KEY=9b1d1757d00d6749255000675acc1e01)
 
 ## Running the app:
 Provided you did all of the prerequisites, you should now be able to run commands:
